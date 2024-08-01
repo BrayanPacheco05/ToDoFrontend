@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import api from '../services/api';
-import './TaskForm.css';
+import './TaskItem.css'
 
 function TaskItem({ task }) {
   const handleDelete = () => {
-    api.delete(`/tasks/${task.id}`)
+    api.delete(`/${task.id}`)
       .then(() => {
         window.location.reload(); // Recargar la página para actualizar la lista
       })

@@ -10,7 +10,7 @@ function TaskForm() {
 
   useEffect(() => {
     if (id) {
-      api.get(`/tasks/${id}`)
+      api.get(`/${id}`)
         .then(response => {
           setTask(response.data);
         })
@@ -31,7 +31,7 @@ function TaskForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (id) {
-      api.put(`/tasks/${id}`, task)
+      api.put(`/${id}`, task)
         .then(() => {
           navigate('/');
         })
@@ -39,7 +39,7 @@ function TaskForm() {
           console.error('Error updating task:', error);
         });
     } else {
-      api.post('/tasks', task)
+      api.post('/', task)
         .then(() => {
           navigate('/');
         })

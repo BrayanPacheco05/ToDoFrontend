@@ -7,7 +7,7 @@ function TaskList() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    api.get('/tasks')
+    api.get('/')
       .then(response => {
         setTasks(response.data);
       })
